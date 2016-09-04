@@ -1,0 +1,10 @@
+header {
+  min-height: 90px;
+}
+footer {
+  margin-top: 20px;
+}
+.main .file-wrap {
+  width: 100px;
+  height: 100px;
+}

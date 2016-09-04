@@ -1,0 +1,25 @@
+{
+  "name": "gp-image",
+  "version": "1.0.0",
+  "description": "github 管理圖片",
+  "main": "index.js",
+  "files": [
+    "dest",
+    "src"
+  ],
+  "bin": {
+    "gpImage": "src/bin/gpImage.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "puritys.chen@gmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^2.9.0",
+    "cp": "^0.2.0",
+    "is-dir": "^1.0.0",
+    "mkdirp": "^0.5.1",
+    "walk": "^2.3.9"
+  }
+}
