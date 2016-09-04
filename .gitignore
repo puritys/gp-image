@@ -1,0 +1,9 @@
+*.svn*
+*.swo
+*.swp
+*.o
+*.so
+*build/
+build/*
+coverage/
+binary/
