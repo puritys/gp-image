@@ -19,9 +19,17 @@ header .logo {
 footer {
   margin-top: 20px;
 }
+.main .dirs-wrap {
+  display: flex;
+  flex-direction: row;
+}
+.main .dirs-wrap .dir-wrap {
+  margin: 0 10px 0 0;
+}
 .main .files-wrap {
   display: flex;
   flex-direction: row;
+  margin: 10px 0 0 0;
 }
 .main .files-wrap .file-wrap {
   width: 100px;

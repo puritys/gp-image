@@ -22,14 +22,17 @@ Object.keys(copy).forEach(function (from) {
     var dest;
     dest = copy[from];
 
-    w.on('file', function (root, fileStates) {
+        console.log(dest);
+    w.on('file', function (root, fileStates, next) {
         var name, srcFile, destFile;
         name = fileStates.name;
-        if (name.match(/\.(css|js)$/)) {
+        console.log(name);
+        if (name.match(/\.(css|js)$/i)) {
             srcFile = from + "/" + name;
             destFile = dest + "/" + name;
             cp.sync(srcFile, destFile);
         }
+        next();
     });
     w.on('error', function (root) {
         console.log("error ", root);
@@ -42,11 +45,12 @@ cp.sync(__dirname +"/../../src/html/index.html", "index.html");
 
 var imagePath = __dirname +"/../../src/image";
 var w = walk.walk(imagePath);
-w.on('file', function (root, states) {
+w.on('file', function (root, states, next) {
     var src, dest, file;
     file = states.name;
     src = imagePath +"/"+ file;
     dest = "dest/image/" + file;
     cp.sync(src, dest);
+    next();
 });
 

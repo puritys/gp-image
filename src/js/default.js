@@ -2,13 +2,21 @@
     var lh = require('light-http/lightHttp-simple.js');
     var self;
     function imageView() {
+        var param;
         this.main = doc.querySelector(".main");
         this.filesWrap = this.main.querySelector(".files-wrap");
+        this.dirsWrap = this.main.querySelector(".dirs-wrap");
+       
         if (!this.main) {
             throw "Can not find the class of .main";
             return ;
         }
-        this.path = "src";
+        param = this.getParameters();
+        if (param && param.path) {
+            this.path = param.path;
+        } else {
+            this.path = "src";
+        }
         self = this;
     }
 
@@ -23,7 +31,14 @@
         lh.ajax(url, "", function (content) {
             var c = JSON.parse(content);
             if (c && c.dirs) {
-            
+                c.dirs.forEach(function(file) {
+                    var path;
+                    path = self.path + "/" + file;
+                    dirHtml.push('<div class="dir-wrap">');
+                    dirHtml.push('<a href="?path='+path+'" >'+file+'</a>');
+                    dirHtml.push('</div>');
+                });
+                self.dirsWrap.innerHTML = dirHtml.join("\n");
             }
             if (c && c.files) {
                 c.files.forEach(function(file) {
@@ -38,6 +53,16 @@
                 self.filesWrap.innerHTML = fileHtml.join("\n");
             }
         });
+    }
+
+    o.getParameters = function() {
+      var query = location.search.substr(1);
+      var result = {};
+      query.split("&").forEach(function(part) {
+        var item = part.split("=");
+        result[item[0]] = decodeURIComponent(item[1]);
+      });
+      return result;
     }
 
     var obj = new imageView();
