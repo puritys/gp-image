@@ -11,8 +11,9 @@ project name: gp-image
 ## 將所有圖片上傳至 gh-pages 這個 branch 中的 "src" 目錄。
 
 ## 
-
+```javascript
 npm install gp-image
+```
 
 Initialize
 
