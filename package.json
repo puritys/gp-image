@@ -1,6 +1,6 @@
 {
   "name": "gp-image",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "github 管理圖片",
   "main": "index.js",
   "files": [
