@@ -10,18 +10,21 @@ project name: gp-image
 
 ## 將所有圖片上傳至 gh-pages 這個 branch 中的 "src" 目錄。
 
-## 
+## 使用 gp-image 自動產生 Web 介面與檔案列表
+
+先安裝 gp-image
+
 ```javascript
 npm install gp-image
 ```
 
-Initialize
+建立基本的頁面與 UI，這個檔案只要做一次就好，除非 UI 有修改才需要重新建立。
 
 ```javascript
 gpImage --init
 ```
 
-重新建立檔案列表
+建立檔案列表，執行時必需帶目錄(src) ，這個目錄下的所有資料夾都會建立一個叫 filelist.json 的檔案，全部 git add, commit 到 gh-pages 即可。 
 
 ```javascript
 gpImage --find src
