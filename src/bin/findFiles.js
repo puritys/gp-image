@@ -1,18 +1,7 @@
 #!/usr/bin/env node
 var fs = require('fs');
 var isDir = require('is-dir');
-var param = require('commander');
 
-param.version('0.0.1')
-    .option('-p, --path [type]', 'enable debug or not', '')
-    .parse(process.argv);
-
-if (!param.path) {
-    console.log('Missing parameter --path xx');
-    process.exit(1);
-}
-
-main(param['path']);
 
 function main (path) {
     var fileList = [], dirList = [], nextDir = [], ret, filelistPath;
@@ -23,6 +12,7 @@ function main (path) {
             return ;
         }
         files.forEach(function (file) {
+            if (file === "filelist.json") return ;
             filePath = path + "/" + file;
             if (isDir.sync(filePath)) {
                 console.log(filePath, " is a directory.")
@@ -43,3 +33,4 @@ function main (path) {
     });
 }
 
+module.exports = main;

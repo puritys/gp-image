@@ -14,6 +14,11 @@ project name: gp-image
 
 npm install gp-image
 
-建立檔案列表
-gpFindFiles --path src
+Initialize
+
+*gpImage --init
+
+重新建立檔案列表
+
+*gpImage --find src
 
