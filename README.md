@@ -16,9 +16,12 @@ npm install gp-image
 
 Initialize
 
-*gpImage --init
+```javascript
+gpImage --init
+```
 
 重新建立檔案列表
 
-*gpImage --find src
-
+```javascript
+gpImage --find src
+```
