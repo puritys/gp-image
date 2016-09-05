@@ -12,7 +12,7 @@
   color: #061e90;
 }
 header {
-  width: 320px;
+  width: 220px;
   display: flex;
   flex-direction: row;
   min-height: 70px;
@@ -63,4 +63,11 @@ footer {
 .main .files-wrap .file-wrap:hover {
   background: #ccc;
   border: 1px solid #a4a4a4;
+}
+@media only screen and (max-width: 520px) {
+  .main .files-wrap .file-wrap {
+    width: 47%;
+    margin: 0 1% 1% 1%;
+    height: auto;
+  }
 }
