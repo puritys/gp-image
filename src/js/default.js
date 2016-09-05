@@ -6,7 +6,6 @@
         this.main = doc.querySelector(".main");
         this.filesWrap = this.main.querySelector(".files-wrap");
         this.dirsWrap = this.main.querySelector(".dirs-wrap");
-       
         if (!this.main) {
             throw "Can not find the class of .main";
             return ;
@@ -17,6 +16,7 @@
         } else {
             this.path = "src";
         }
+        this.hasParentDir = (this.path != "src") ? true : false;
         self = this;
     }
 
@@ -30,7 +30,13 @@
         url = self.path + "/filelist.json";
         lh.ajax(url, "", function (content) {
             var c = JSON.parse(content);
-            if (c && c.dirs) {
+            if (true === self.hasParentDir) {
+                dirHtml.push('<div class="dir-wrap">');
+                dirHtml.push('<a href="#" onclick="history.go(-1);return false;" >../</a>');
+                dirHtml.push('</div>');
+            }
+
+            if (c && c.dirs && c.dirs.length > 0) {
                 c.dirs.forEach(function(file) {
                     var path;
                     path = self.path + "/" + file;
@@ -38,16 +44,20 @@
                     dirHtml.push('<a href="?path='+path+'" >'+file+'</a>');
                     dirHtml.push('</div>');
                 });
-                self.dirsWrap.innerHTML = dirHtml.join("\n");
-            }
+            } 
+
+            if (dirHtml) self.dirsWrap.innerHTML = dirHtml.join("\n");
+
             if (c && c.files) {
                 c.files.forEach(function(file) {
                     var fullPath;
                     fullPath = self.path + "/" + file;
                     fileHtml.push('<div class="file-wrap">');
+                    fileHtml.push('<a href="'+fullPath+'" target="_blank">');
                     if (file.match(/\.(jpg|png|gif|jpeg)/)) {
                         fileHtml.push('<img src="'+fullPath+'" />');
                     }
+                    fileHtml.push('</a>');
                     fileHtml.push('</div>');
                 });
                 self.filesWrap.innerHTML = fileHtml.join("\n");

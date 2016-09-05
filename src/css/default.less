@@ -1,19 +1,30 @@
 .wrap {
     max-width: 1024px;
+    min-width: 320px;
     margin: 0 auto;
+    a, a:visited {
+        text-decoration: none;
+        color: #002af3;
+    }
+    a:hover {
+        color: #061e90; 
+    }
 }
 header {
+    width: 320px;
     display: flex;
     flex-direction: row;
-    min-height: 90px;
-    margin: 0 0 20px 0;
-    border-bottom: 1px dashed #2f2f2f;
+    min-height: 70px;
+    margin: 0px auto;
     .logo {
         background-image: url('../image/image-view-logo.png');
         width: 90px;
         height: 60px;
         display: block;
         margin-top: 8px;
+    }
+    .desc {
+        margin-top: 25px;
     }
 }
 
@@ -22,6 +33,9 @@ footer {
 }
 
 .main {
+    margin-top: 5px;
+    border-top: 1px dashed #2f2f2f;
+    padding-top: 12px;
     .dirs-wrap {
         display: flex;
         flex-direction: row;
@@ -32,15 +46,24 @@ footer {
     .files-wrap {
         display: flex;
         flex-direction: row;
+        flex-wrap: wrap;
         margin: 10px 0 0 0;
         .file-wrap {
             width: 100px;
             height: 100px;
             overflow: hidden;
+            background: #efefef;
+            margin: 0 10px 10px 0px;
+            border: 1px solid white;
             img {
                 width: 100%;
             }
+            &:hover {
+                background: #ccc;
+                border: 1px solid #a4a4a4;
+            }
         }
-  
+        a:hover {
+        } 
     }
 }
