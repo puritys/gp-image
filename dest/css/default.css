@@ -1,13 +1,22 @@
 .wrap {
   max-width: 1024px;
+  min-width: 320px;
   margin: 0 auto;
 }
+.wrap a,
+.wrap a:visited {
+  text-decoration: none;
+  color: #002af3;
+}
+.wrap a:hover {
+  color: #061e90;
+}
 header {
+  width: 320px;
   display: flex;
   flex-direction: row;
-  min-height: 90px;
-  margin: 0 0 20px 0;
-  border-bottom: 1px dashed #2f2f2f;
+  min-height: 70px;
+  margin: 0px auto;
 }
 header .logo {
   background-image: url('../image/image-view-logo.png');
@@ -16,8 +25,16 @@ header .logo {
   display: block;
   margin-top: 8px;
 }
+header .desc {
+  margin-top: 25px;
+}
 footer {
   margin-top: 20px;
+}
+.main {
+  margin-top: 5px;
+  border-top: 1px dashed #2f2f2f;
+  padding-top: 12px;
 }
 .main .dirs-wrap {
   display: flex;
@@ -29,13 +46,21 @@ footer {
 .main .files-wrap {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   margin: 10px 0 0 0;
 }
 .main .files-wrap .file-wrap {
   width: 100px;
   height: 100px;
   overflow: hidden;
+  background: #efefef;
+  margin: 0 10px 10px 0px;
+  border: 1px solid white;
 }
 .main .files-wrap .file-wrap img {
   width: 100%;
+}
+.main .files-wrap .file-wrap:hover {
+  background: #ccc;
+  border: 1px solid #a4a4a4;
 }
