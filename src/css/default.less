@@ -35,13 +35,24 @@ footer {
 
 .main {
     margin-top: 5px;
-    border-top: 1px dashed #2f2f2f;
+    border-top: 1px solid #bababa;
     padding-top: 12px;
     .dirs-wrap {
         display: flex;
         flex-direction: row;
         .dir-wrap {
             margin: 0 10px 0 0;
+            &:before {
+                -webkit-mask-image: url(../image/file-directory.svg);
+                mask-image: url(../image/file-directory.svg);
+                background-color: #dbbf23;
+                width: 14px;
+                height: 16px;
+                content: " ";
+                margin-top: -1px;
+                vertical-align: middle;
+                display: inline-block;
+            }
         }      
     }
     .files-wrap {
@@ -53,7 +64,7 @@ footer {
             width: 100px;
             height: 100px;
             overflow: hidden;
-            background: #efefef;
+            background: #f3f3f3;
             margin: 0 10px 10px 0px;
             border: 1px solid white;
             img {
