@@ -7,7 +7,7 @@ project name: gp-image   [[Demo Page](https://puritys.github.io/gp-image/)]
 
 ## 建立一個 Github Pages
 
-點擊 Github 右上角有一個 Settings ，進入設定頁面，頁面往下拉就會看到 Automatic page generator (如下圖)，點下去就可以建立一個 Github Page ，過程中需要選擇 layout ，隨便選選就好。
+點擊 Github 右上角有一個 Settings ，進入設定頁面，再點左邊選單的 pages 打開 Github Page 功能，過程中需要選擇 layout ，隨便選選就好。
 <img src="https://puritys.github.io/gp-image/src/github/applyGhPages1.png">
 
 ## 將所有圖片上傳至 gh-pages 這個 branch 中的 "src" 目錄。
